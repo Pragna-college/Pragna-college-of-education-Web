@@ -11,13 +11,16 @@
 
 <nav class="nav">
   <div class="wrap">
-    <a href="index.html" class="logo">Pragna<span>.</span></a>
-    <div class="links">
+    <a href="index.html" class="logo">Pragna College <span>of Education</span></a>
+    <div class="nav-right">
+      <a href="tel:+919848066101" class="cta">Call for admissions</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+    <div class="links" id="navLinks">
       <a href="index.html" class="page-link">Home</a>
       <a href="courses.html" class="page-link active">Courses</a>
       <a href="gallery.html" class="page-link">Gallery</a>
       <a href="contact.html" class="page-link">Contact</a>
-      <a href="tel:+919848066101" class="cta">Call for admissions</a>
     </div>
   </div>
 </nav>
@@ -67,7 +70,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <a href="index.html" class="logo">Pragna<span>.</span></a>
+      <a href="index.html" class="logo">Pragna College <span>of Education</span></a>
       <p style="margin-top:14px; color:var(--ink-soft); font-size:14px; max-width:260px;">Pragna College of Education — shaping the teachers of tomorrow.</p>
     </div>
     <div class="cols">
@@ -86,6 +89,12 @@
   </div>
   <div class="wrap bottom">© 2026 Pragna College of Education. All rights reserved.</div>
 </footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function () {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
