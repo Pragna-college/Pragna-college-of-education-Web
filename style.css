@@ -684,3 +684,65 @@ footer a:hover{color:var(--teal)}
   .hero-text{top:clamp(285px,26vw,360px) !important;width:min(560px,47vw) !important}
   .hero-text h1{font-size:clamp(2.7rem,4vw,3.8rem)}
 }
+
+
+/* Campus video section */
+.campus-video{position:relative;height:560px;overflow:hidden;margin:70px 0;border-radius:4px}
+.campus-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.campus-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,247,240,.95) 0%,rgba(0,0,0,.08) 18%,rgba(0,0,0,.28) 55%,rgba(0,0,0,.45) 100%)}
+.campus-content{position:absolute;left:7%;bottom:60px;z-index:3;max-width:560px;color:#fff}
+.campus-tag{display:inline-block;margin-bottom:18px;color:#E8C177;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.campus-content h2{font-family:'Fraunces',serif;font-size:clamp(2.5rem,4vw,4rem);margin-bottom:18px;color:#fff}
+.campus-content p{font-size:1.05rem;line-height:1.8;color:rgba(255,255,255,.94)}
+@media(max-width:900px){
+.campus-video{height:400px;margin:50px 0}
+.campus-content{left:22px;right:22px;bottom:30px;max-width:none}
+.campus-content h2{font-size:2.2rem}
+.campus-content p{font-size:.95rem;line-height:1.6}
+}
+
+
+/* ===== Subtle scroll and navigation animations ===== */
+.navbar{
+  transition:min-height .28s ease,padding .28s ease,box-shadow .28s ease,background-color .28s ease;
+}
+.navbar.scrolled{
+  min-height:76px;
+  padding-top:16px;
+  padding-bottom:16px;
+  box-shadow:0 10px 28px rgba(30,42,56,.08);
+  background:rgba(250,247,240,.98);
+}
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1);
+  transition-delay:var(--reveal-delay,0ms);
+}
+.founder-portrait.reveal{transform:translateX(-34px)}
+.founder-copy.reveal{transform:translateX(34px)}
+.reveal.is-visible{
+  opacity:1;
+  transform:translate(0,0);
+}
+.course-card.reveal:nth-child(2),
+.gallery-item.reveal:nth-child(even){
+  transition-delay:140ms;
+}
+.campus-video video{
+  transform:scale(1.035);
+  animation:campusDrift 14s ease-in-out infinite alternate;
+}
+@keyframes campusDrift{
+  from{transform:scale(1.035) translate3d(0,0,0)}
+  to{transform:scale(1.08) translate3d(-1.2%,.6%,0)}
+}
+@media(max-width:900px){
+  .navbar.scrolled{min-height:68px;padding-top:12px;padding-bottom:12px}
+  .founder-portrait.reveal,.founder-copy.reveal{transform:translateY(28px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal.is-visible{opacity:1;transform:none;transition:none}
+  .campus-video video{animation:none;transform:none}
+  .navbar{transition:none}
+}
