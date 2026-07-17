@@ -686,44 +686,6 @@ footer a:hover{color:var(--teal)}
 }
 
 
-/* Campus video section */
-.campus-video{
-  position:relative;
-  height:500px;
-  overflow:hidden;
-  margin:70px 0;
-  border-radius:4px;
-  background:#18283a;
-}
-.campus-video video{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:auto;
-  height:175%;
-  max-width:none;
-  object-fit:contain;
-  object-position:center;
-  transform:translate(-50%,-50%) rotate(-90deg) scale(.78);
-  transform-origin:center;
-}
-.campus-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,247,240,.95) 0%,rgba(0,0,0,.08) 18%,rgba(0,0,0,.28) 55%,rgba(0,0,0,.45) 100%)}
-.campus-content{position:absolute;left:7%;bottom:60px;z-index:3;max-width:560px;color:#fff}
-.campus-tag{display:inline-block;margin-bottom:18px;color:#E8C177;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
-.campus-content h2{font-family:'Fraunces',serif;font-size:clamp(2.5rem,4vw,4rem);margin-bottom:18px;color:#fff}
-.campus-content p{font-size:1.05rem;line-height:1.8;color:rgba(255,255,255,.94)}
-@media(max-width:900px){
-  .campus-video{height:360px;margin:50px 0}
-  .campus-video video{
-    width:auto;
-    height:155%;
-    transform:translate(-50%,-50%) rotate(-90deg) scale(.78);
-  }
-  .campus-content{left:22px;right:22px;bottom:30px;max-width:none}
-  .campus-content h2{font-size:2.2rem}
-  .campus-content p{font-size:.95rem;line-height:1.6}
-}
-
 
 /* ===== Subtle scroll and navigation animations ===== */
 .navbar{
@@ -753,11 +715,10 @@ footer a:hover{color:var(--teal)}
   transition-delay:140ms;
 }
 .campus-video video{
+  transform:scale(1.035);
   animation:campusDrift 14s ease-in-out infinite alternate;
 }
-@keyframes campusDrift{
-  from{transform:translate(-50%,-50%) rotate(-90deg) scale(.78)}
-  to{transform:translate(-49.2%,-50.4%) rotate(-90deg) scale(.82)}
+to{transform:scale(1.08) translate3d(-1.2%,.6%,0)}
 }
 @media(max-width:900px){
   .navbar.scrolled{min-height:68px;padding-top:12px;padding-bottom:12px}
@@ -765,6 +726,5 @@ footer a:hover{color:var(--teal)}
 }
 @media(prefers-reduced-motion:reduce){
   .reveal,.reveal.is-visible{opacity:1;transform:none;transition:none}
-  .campus-video video{animation:none;transform:translate(-50%,-50%) rotate(-90deg) scale(.78)}
   .navbar{transition:none}
 }
